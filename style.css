@@ -37,6 +37,8 @@ header {
   transition: 0.3s ease;
 }
 
+.logo span { color: #ffcb05; }
+
 .logo:hover {
   transform: scale(1.05);
   text-shadow: 0 0 15px #0ef;
@@ -95,12 +97,10 @@ nav a:hover, nav a.Home {
 
 .nav-wa::after { display: none !important; }
 
-/* Mobile Menu Toggle */
 .menu-checkbox { display: none; }
 .menu-toggle { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
 .menu-toggle span { display: block; height: 3px; width: 25px; background: #0ef; border-radius: 3px; transition: 0.3s; }
 
-/* Global Section */
 section {
   min-height: 100vh;
   padding: 120px 8% 60px;
@@ -123,9 +123,10 @@ section {
 }
 
 .home-text h3 {
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 15px;
-  color: #e2e8f0;
+  color: #ffcb05;
+  letter-spacing: 1px;
 }
 
 .home-text p {
@@ -137,9 +138,9 @@ section {
 
 .typing-container {
   margin: 15px 0 25px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
-  color: #ffcb05;
+  color: #e2e8f0;
 }
 
 .social-icons {
@@ -236,14 +237,102 @@ section {
   box-shadow: 0 0 15px rgba(255, 203, 5, 0.5);
 }
 
+/* Services Section */
+.services-section { background: #020617; text-align: center; }
+.services-section h2, .projects-section h2 { font-size: 36px; color: #0ef; margin-bottom: 10px; }
+.subtitle { color: #94a3b8; margin-bottom: 40px; font-size: 16px; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: rgba(15, 23, 42, 0.8);
+  padding: 30px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 238, 255, 0.15);
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: #0ef;
+  box-shadow: 0 0 25px rgba(0, 238, 255, 0.3);
+}
+
+.service-icon { font-size: 38px; color: #0ef; margin-bottom: 15px; }
+.service-card h3 { color: #fff; margin-bottom: 12px; font-size: 20px; }
+.service-card p { color: #94a3b8; font-size: 14px; line-height: 1.6; }
+
+.badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ffcb05;
+  color: #000;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+/* Projects Section */
+.projects-section { background: #01040f; text-align: center; }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.project-card {
+  background: #0f172a;
+  padding: 30px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 203, 5, 0.2);
+  text-align: left;
+  transition: 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: #ffcb05;
+  box-shadow: 0 0 20px rgba(255, 203, 5, 0.3);
+}
+
+.project-tag {
+  display: inline-block;
+  background: rgba(0, 238, 255, 0.1);
+  color: #0ef;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.project-card h3 { color: #fff; margin-bottom: 10px; font-size: 20px; }
+.project-card p { color: #94a3b8; font-size: 14px; line-height: 1.6; margin-bottom: 15px; }
+
+.tech-stack { display: flex; gap: 8px; flex-wrap: wrap; }
+.tech-stack span {
+  background: #1e293b;
+  color: #cbd5e1;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
 /* Skills Section */
 .skills-container { max-width: 1100px; margin: 0 auto; text-align: center; }
-
-.skills-container h2 {
-  font-size: 36px;
-  margin-bottom: 40px;
-  color: #ffcb05;
-}
+.skills-container h2 { font-size: 36px; margin-bottom: 40px; color: #ffcb05; }
 
 .skills-grid {
   display: grid;
@@ -267,11 +356,7 @@ section {
   box-shadow: 0 0 20px rgba(255, 203, 5, 0.3);
 }
 
-.skill-card h3 {
-  font-size: 18px;
-  margin-bottom: 12px;
-  color: #fff;
-}
+.skill-card h3 { font-size: 18px; margin-bottom: 12px; color: #fff; }
 
 .skill-bar {
   background: rgba(255, 255, 255, 0.1);
@@ -285,7 +370,6 @@ section {
   width: var(--progress);
   background: linear-gradient(90deg, #ffcb05, #0ef);
   border-radius: 10px;
-  transition: width 1s ease-in-out;
 }
 
 .skill-percent {
@@ -298,22 +382,11 @@ section {
 }
 
 /* Contact Section */
-.contact-section { text-align: center; background: #01040f; }
-
-.contact-section h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
-  color: #ffcb05;
-}
-
+.contact-section { text-align: center; background: #020617; }
+.contact-section h2 { font-size: 36px; margin-bottom: 10px; color: #ffcb05; }
 .contact-section p { font-size: 16px; margin-bottom: 40px; color: #94a3b8; }
 
-.contact-cards {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
+.contact-cards { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
 
 .contact-card {
   background: #0f172a;
@@ -333,16 +406,9 @@ section {
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.contact-card.highlight {
-  border-color: rgba(37, 211, 102, 0.4);
-}
+.contact-card.highlight { border-color: rgba(37, 211, 102, 0.4); }
 
-.contact-icon {
-  font-size: 40px;
-  color: #ffcb05;
-  margin-bottom: 15px;
-}
-
+.contact-icon { font-size: 40px; color: #ffcb05; margin-bottom: 15px; }
 .contact-card.highlight .contact-icon { color: #25D366; }
 
 .contact-card h3 { font-size: 22px; margin-bottom: 10px; color: #fff; }
@@ -368,13 +434,7 @@ section {
   box-shadow: 0 0 25px rgba(37, 211, 102, 0.6);
 }
 
-.contact-socials {
-  display: flex;
-  gap: 15px;
-  margin-top: 20px;
-  width: 100%;
-  justify-content: center;
-}
+.contact-socials { display: flex; gap: 15px; margin-top: 20px; justify-content: center; }
 
 .social-btn {
   display: inline-flex;
@@ -394,7 +454,6 @@ section {
 .social-btn.snapchat { background: #fffc00; color: #000; }
 .social-btn.snapchat:hover { background: #e6e300; transform: scale(1.05); }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 20px;
@@ -403,7 +462,7 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Responsive Media Queries */
+/* Responsive */
 @media (max-width: 868px) {
   .menu-toggle { display: flex; }
   
